@@ -1,6 +1,10 @@
 # 바다를 메워 만든 도시, 인천 (1910–2025)
 
-> **[▶ 지도 보기](https://wherewindstay.github.io/incheon-reclamation/)**
+[![인천 간척 지도 — 1910년부터 2025년까지의 해안선](preview.png)](https://wherewindstay.github.io/incheon-reclamation/)
+
+> ### **[▶ 지도 열기 — wherewindstay.github.io/incheon-reclamation](https://wherewindstay.github.io/incheon-reclamation/)**
+>
+> *위 이미지는 정지 화면입니다. GitHub은 보안상 페이지 안에서 인터랙티브 지도를 실행하지 않으므로, 시점을 옮기거나 구·군을 눌러보려면 링크로 들어가세요.*
 
 1910년부터 2025년까지 인천의 해안선을 등고선처럼 쌓아, 어느 시기에 어디를 메워 땅을 얻었는지 보여주는 인터랙티브 지도입니다.
 
