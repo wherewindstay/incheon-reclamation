@@ -1,61 +1,68 @@
-# 바다를 메워 만든 도시, 인천 (1910–2025)
+**English** | [한국어](README.ko.md)
 
-[![인천 간척 지도 — 1910년부터 2025년까지의 해안선](preview.png)](https://wherewindstay.github.io/incheon-reclamation/)
+# Incheon, a City Built on Reclaimed Sea (1910–2025)
 
-> ### **[▶ 지도 열기 — wherewindstay.github.io/incheon-reclamation](https://wherewindstay.github.io/incheon-reclamation/)**
+[![Incheon reclamation map — shorelines from 1910 to 2025](preview.png)](https://wherewindstay.github.io/incheon-reclamation/)
+
+> ### **[▶ Open the map — wherewindstay.github.io/incheon-reclamation](https://wherewindstay.github.io/incheon-reclamation/)**
 >
-> *위 이미지는 정지 화면입니다. GitHub은 보안상 페이지 안에서 인터랙티브 지도를 실행하지 않으므로, 시점을 옮기거나 구·군을 눌러보려면 링크로 들어가세요.*
+> *The image above is static. GitHub does not run interactive content inside a README, so follow the link to move through time and click districts.*
 
-1910년부터 2025년까지 인천의 해안선을 등고선처럼 쌓아, 어느 시기에 어디를 메워 땅을 얻었는지 보여주는 인터랙티브 지도입니다.
+An interactive map that stacks Incheon's shoreline like tree rings, showing when and where land was claimed from the sea.
 
-이 범위 안에서 인천의 육지는 **766㎢에서 1,020㎢로** 늘었습니다. 지금 인천 육지의 **19.0%**(190.3㎢)가 1985년 이후에 생긴 땅이고, 인천 사람 **13.5%**(약 41만 4천 명)가 그 위에 살고 있습니다.
+Within this extent, Incheon grew from **766 km² to 1,020 km²**. **19.0%** of today's land (190.3 km²) appeared after 1985, and **13.5%** of the population — about 414,000 people — lives on it.
 
-| 구·군 | 면적 중 매립지 | 인구 중 매립지 거주 |
+| District | Share of area reclaimed | Share of population on reclaimed land |
 |---|---:|---:|
-| 연수구 | 73.2% | 53.9% |
-| 중구 | 38.6% | 11.2% |
-| 동구 | 24.5% | 1.5% |
-| 서구 | 23.5% | 14.3% |
-| 남동구 | 17.9% | 11.1% |
-| 강화군 | 9.9% | 4.5% |
-| 미추홀구 | 8.4% | 2.3% |
-| 옹진군 | 7.5% | 3.4% |
-| 부평구 | 1.3% | 1.7% |
-| 계양구 | 0.9% | 0.6% |
-| **인천 전체** | **19.0%** | **13.5%** |
+| Yeonsu-gu | 73.2% | 53.9% |
+| Jung-gu | 38.6% | 11.2% |
+| Dong-gu | 24.5% | 1.5% |
+| Seo-gu | 23.5% | 14.3% |
+| Namdong-gu | 17.9% | 11.1% |
+| Ganghwa-gun | 9.9% | 4.5% |
+| Michuhol-gu | 8.4% | 2.3% |
+| Ongjin-gun | 7.5% | 3.4% |
+| Bupyeong-gu | 1.3% | 1.7% |
+| Gyeyang-gu | 0.9% | 0.6% |
+| **Incheon total** | **19.0%** | **13.5%** |
 
-## 데이터
+## Data
 
-| 시기 | 출처 | 방법 |
+| Period | Source | Method |
 |---|---|---|
-| 1910–1955 | 국사편찬위원회 [역사지리정보](https://hgis.history.go.kr/) | 시대별 행정구역 폴리곤을 육지 실루엣으로 병합 |
-| 1985–2025 (5년 간격 9개 시점) | USGS Landsat 5/7/8/9 Collection 2 Level-2 (Google Earth Engine) | MNDWI 수체지수(green·SWIR)로 수역/육지를 가르고 30m 해상도로 벡터화 |
-| 구·군 경계 | 통계청 SGIS 시군구(2025) | — |
-| 인구 | 통계청 SGIS 100m 격자인구(2024) | 격자 중심점이 매립지 폴리곤 안에 드는지로 귀속 |
+| 1910–1955 | National Institute of Korean History, [historical-geographic data](https://hgis.history.go.kr/) | Administrative polygons of each era, dissolved into a land silhouette |
+| 1985–2025 (nine snapshots, 5-year intervals) | USGS Landsat 5/7/8/9 Collection 2 Level-2, via Google Earth Engine | Water and land separated with the MNDWI index, vectorized at 30 m |
+| District boundaries | Statistics Korea SGIS, 2025 administrative divisions | — |
+| Population | Statistics Korea SGIS 100 m grid, 2024 | Cells assigned by whether their centroid falls on reclaimed land |
 
-**매립지 정의**: 2025년 육지 − 1985년 육지.
+**Reclaimed land is defined as** 2025 land minus 1985 land.
 
-## 읽을 때 주의할 점
+## How to read it, and what it cannot tell you
 
-- **MNDWI는 촬영 시점의 조위를 탑니다.** 갯벌이 넓은 구간(영종 서쪽·강화 남단)은 간조 영상이 섞이면 육지로 잡혀 경계가 다소 후하게 그려집니다. 1990→1995, 2020→2025처럼 면적이 소폭 뒷걸음치는 구간도 이 때문입니다.
-- **1970~80년대 매립은 잡히지 않습니다.** 매립지를 "1985년 이후"로 정의했기 때문에, 남동공단처럼 그 이전에 메운 땅은 1985년 시점에 이미 육지입니다. 실제 누적 매립은 위 수치보다 큽니다.
-- **백령·대청도는 빠져 있습니다.** 위성 분석 범위(ROI)의 서쪽 경계가 동경 125.65°입니다.
-- **옹진군 인구는 과소추정일 수 있습니다.** SGIS 격자인구 5개 존 중 3개(가사·나사·다사)만 사용해, 나머지 존에 속한 일부 도서 인구가 빠졌습니다. 면적 계산에는 영향이 없습니다.
-- **1910·1914·1955년은 한 겹으로 합쳤습니다.** 세 시점의 육지 윤곽 차이가 0.2㎢ 이하로 측정 한계 안에서 같습니다. 차이는 해안선이 아니라 내륙 행정경계 변경(부천군 편입, 인천부 부역확장)에서 옵니다.
-- **역사지리 경계는 1985년 위성 육지 범위로 제한했습니다.** 행정구역 폴리곤은 갯벌·간석지를 포함해 실제 육지보다 넓게 잡히기 때문입니다.
-- 인천 전체 육지면적이 1,001㎢로 공식 통계(약 1,065㎢)보다 6% 작습니다. Landsat 분류에서 갯벌 경계가 잘리는 정도의 차이입니다.
+- **MNDWI depends on the tide at capture time.** Where tidal flats are wide — west of Yeongjong, south of Ganghwa — shorelines run generous. This is also why area dips slightly from 1990→1995 and 2020→2025.
+- **Reclamation before 1985 is invisible here.** Because reclaimed land is defined against the 1985 baseline, places filled earlier (such as the Namdong Industrial Complex) already appear as land in 1985. Cumulative reclamation is larger than these figures suggest.
+- **Baengnyeong and Daecheong islands are missing.** The analysis extent stops at 125.65°E.
+- **Ongjin-gun's population may be underestimated.** Only three of five SGIS grid zones were available, so some island populations are absent. Area figures are unaffected.
+- **1910, 1914 and 1955 are merged into one layer.** Their outlines differ by less than 0.2 km², within measurement error, and the differences come from inland boundary changes rather than the coast.
+- **Historical boundaries are clipped to the 1985 satellite extent,** because administrative polygons include tidal flats and run wider than actual land.
+- Total land comes to 1,001 km² against an official figure of about 1,065 km² — a 6% gap that reflects where Landsat classification cuts the tidal-flat edge.
 
-## 사용법
+## Using the map
 
-- 아래 슬라이더로 시점 이동 — 그 시점까지의 육지가 누적해서 쌓입니다
-- 왼쪽 범례의 연도를 눌러 해당 층만 껐다 켜기
-- 지도에서 구·군을 누르면 그 지역의 매립 비중, 빈 바다를 누르면 인천 전체
-- 휠로 확대, 끌어서 이동, 더블클릭으로 초기화
+- The slider moves through time; layers accumulate up to the selected year
+- Click a year in the legend to toggle that layer
+- Click a district for its reclamation share, or click open water for the whole city
+- Scroll to zoom, drag to pan, double-click to reset
+- The **한 · EN** button switches languages
 
-## 기술
+## Technical notes
 
-외부 의존이 없는 단일 HTML 파일입니다. 지도 라이브러리 없이 SVG로 직접 그렸고, 좌표는 전부 파일 안에 인라인되어 있어 오프라인에서도 열립니다.
+A single HTML file with no external dependencies. The map is drawn directly in SVG without a mapping library, and all coordinates are inlined, so it works offline and embeds cleanly (for example, in a Notion page).
 
-## 라이선스
+## Credits
 
-코드 MIT · 원본 데이터는 각 제공기관의 이용약관을 따릅니다.
+Data collection and the Google Earth Engine notebook by **Sohyun Park**. Data pipeline and visualization built with the help of **Anthropic Claude**. All figures were computed from source data, and validation points — Songdo, Incheon Airport, the Namdong Industrial Complex, and the old city center — were checked against documented reclamation history.
+
+## License
+
+Code released under the MIT License. Source data remains subject to the terms of each provider.
