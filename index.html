@@ -4,9 +4,9 @@
     <button id="lang" type="button" aria-label="Language">한 · EN</button>
     <div class="eyebrow">Incheon · Layers of Reclaimed Land</div>
     <h1 id="t-h1">바다를 메워 만든 도시, 인천</h1>
-    <p class="lede" id="t-lede">1910년부터 2025년까지 인천의 <b>실제 해안선</b>을 나이테처럼 쌓았습니다.
+    <p class="lede" id="t-lede">1910년부터 2025년까지 인천의 실제 해안선을 나이테처럼 쌓았습니다.
       짙은 남색은 역사지리정보로 그린 1910~1955년의 육지, 모래·주황 5겹은 Landsat 위성영상에서 뽑아낸 1985년 이후의 해안선입니다.
-      노출된 띠가 곧 <b>그 시기에 바다를 메워 얻은 땅</b>입니다 — 인천 육지는 <b>766㎢에서 1,020㎢로</b> 늘었습니다.</p>
+      노출된 띠가 곧 그 시기에 바다를 메워 얻은 땅입니다 — 인천 육지는 766㎢에서 1,020㎢로 늘었습니다.</p>
   </header>
 
   <div id="wrap">
@@ -26,11 +26,11 @@
   </div>
 
   <footer>
-    <p id="t-src">해안선: 국사편찬위원회 역사지리정보(1910~1955) + <b>Landsat 위성영상</b>(1985~2025, 5년 간격 9개 시점,
+    <p id="t-src">해안선: 국사편찬위원회 역사지리정보(1910~1955) + Landsat 위성영상(1985~2025, 5년 간격 9개 시점,
     Google Earth Engine에서 MNDWI 수체지수로 육지를 추출) ·
     구·군 경계: 2025년 시군구(2026년 7월 제물포·영종·검단·서해구 개편 이전) ·
     인구: 통계청 SGIS 격자인구.</p>
-    <p style="margin-top:6px" id="t-note">1910·1914·1955년은 육지 윤곽 차이가 0.2㎢ 이하로 측정 한계 안에서 사실상 같아 <b>한 겹으로 합쳤습니다.</b>
+    <p style="margin-top:6px" id="t-note">1910·1914·1955년은 육지 윤곽 차이가 0.2㎢ 이하로 측정 한계 안에서 사실상 같아 한 겹으로 합쳤습니다.
     역사지리 경계는 갯벌·간석지를 포함해 실제 육지보다 넓게 잡히므로 1985년 위성 실측 범위로 제한했습니다.
     MNDWI는 촬영 시점의 조위를 타기 때문에 갯벌이 넓은 구간(영종 서쪽·강화 남단)은 경계가 다소 후하게 잡히고,
     그래서 1990→1995, 2020→2025처럼 면적이 소폭 뒷걸음치는 구간도 생깁니다.
@@ -94,6 +94,8 @@ text.gul.sel{fill:var(--accent)}
   #pbody h3,#pbody .sub,#pbody .note{grid-column:1 / -1}
 }
 #pbody .pie{display:flex;align-items:center;gap:11px;margin:10px 0 2px}
+#pbody .pie svg{flex:0 0 auto}
+#pbody .pie .pl{min-width:0}
 #pbody .pie .pl{display:flex;flex-direction:column;gap:2px;line-height:1.35}
 #pbody .pie .pl b{font-size:12.5px}
 #pbody .pie .pl span{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums}
@@ -153,9 +155,9 @@ const I18N = {
  ko:{
   btn:'한 · EN',
   h1:'바다를 메워 만든 도시, 인천',
-  lede:`1910년부터 2025년까지 인천의 <b>실제 해안선</b>을 나이테처럼 쌓았습니다.
+  lede:`1910년부터 2025년까지 인천의 실제 해안선을 나이테처럼 쌓았습니다.
     짙은 남색은 역사지리정보로 그린 1910~1955년의 육지, 모래·주황 5겹은 Landsat 위성영상에서 뽑아낸 1985년 이후의 해안선입니다.
-    노출된 띠가 곧 <b>그 시기에 바다를 메워 얻은 땅</b>입니다 — 인천 육지는 <b>766㎢에서 1,020㎢로</b> 늘었습니다.`,
+    노출된 띠가 곧 그 시기에 바다를 메워 얻은 땅입니다 — 인천 육지는 766㎢에서 1,020㎢로 늘었습니다.`,
   hint:['스크롤 = 확대','드래그 = 이동','더블클릭 = 초기화'],
   all:'인천광역시',
   subAll:'구·군 이름을 누르면 그 지역만 봅니다',
@@ -165,10 +167,10 @@ const I18N = {
   rowPop:y=>`인구 (${y})`, rowRpop:'매립지 거주 추정',
   unitKm:'㎢', unitP:'명',
   note:'면적은 2025년 위성 육지 ∩ 구 경계, 매립지는 1985년 이후 늘어난 육지입니다. 인구는 통계청 SGIS 100m 격자인구를 격자 중심점 기준으로 합산한 추정값입니다.',
-  src:`해안선: 국사편찬위원회 역사지리정보(1910~1955) + <b>Landsat 위성영상</b>(1985~2025, 5년 간격 9개 시점,
+  src:`해안선: 국사편찬위원회 역사지리정보(1910~1955) + Landsat 위성영상(1985~2025, 5년 간격 9개 시점,
     Google Earth Engine에서 MNDWI 수체지수로 육지를 추출) ·
     구·군 경계: 2025년 시군구(2026년 7월 제물포·영종·검단·서해구 개편 이전) · 인구: 통계청 SGIS 격자인구.`,
-  foot:`1910·1914·1955년은 육지 윤곽 차이가 0.2㎢ 이하로 측정 한계 안에서 사실상 같아 <b>한 겹으로 합쳤습니다.</b>
+  foot:`1910·1914·1955년은 육지 윤곽 차이가 0.2㎢ 이하로 측정 한계 안에서 사실상 같아 한 겹으로 합쳤습니다.
     역사지리 경계는 갯벌·간석지를 포함해 실제 육지보다 넓게 잡히므로 1985년 위성 실측 범위로 제한했습니다.
     MNDWI는 촬영 시점의 조위를 타기 때문에 갯벌이 넓은 구간(영종 서쪽·강화 남단)은 경계가 다소 후하게 잡히고,
     그래서 1990→1995, 2020→2025처럼 면적이 소폭 뒷걸음치는 구간도 생깁니다.
@@ -178,10 +180,10 @@ const I18N = {
  en:{
   btn:'EN · 한',
   h1:'Incheon, a City Built on Reclaimed Sea',
-  lede:`Nine snapshots of Incheon's <b>actual shoreline</b>, stacked like tree rings from 1910 to 2025.
+  lede:`Nine snapshots of Incheon's actual shoreline, stacked like tree rings from 1910 to 2025.
     The dark navy layer is land drawn from historical-geographic records (1910–1955); the five sand-to-orange layers
-    are shorelines extracted from Landsat imagery (1985 onward). Each exposed band is <b>land claimed from the sea in that period</b> —
-    Incheon grew from <b>766 km² to 1,020 km²</b>.`,
+    are shorelines extracted from Landsat imagery (1985 onward). Each exposed band is land claimed from the sea in that period —
+    Incheon grew from 766 km² to 1,020 km².`,
   hint:['Scroll = zoom','Drag = pan','Double-click = reset'],
   all:'Incheon Metropolitan City',
   subAll:'Click a district to see it alone',
@@ -191,10 +193,10 @@ const I18N = {
   rowPop:y=>`Population (${y})`, rowRpop:'Living on reclaimed land',
   unitKm:'km²', unitP:'',
   note:'Area is 2025 satellite-derived land clipped to district boundaries; reclaimed land is what appeared after 1985. Population is estimated by summing Statistics Korea SGIS 100 m grid cells by their centroids.',
-  src:`Shoreline: National Institute of Korean History historical-geographic data (1910–1955) + <b>Landsat imagery</b>
+  src:`Shoreline: National Institute of Korean History historical-geographic data (1910–1955) + Landsat imagery
     (1985–2025, nine snapshots at five-year intervals; land extracted with the MNDWI water index on Google Earth Engine) ·
     District boundaries: 2025 administrative divisions (before the July 2026 reorganization) · Population: Statistics Korea SGIS grid data.`,
-  foot:`The 1910, 1914 and 1955 outlines differ by less than 0.2 km² — within measurement error — so they are <b>merged into a single layer.</b>
+  foot:`The 1910, 1914 and 1955 outlines differ by less than 0.2 km² — within measurement error — so they are merged into a single layer.
     Historical-geographic boundaries include tidal flats and so run wider than actual land; they are clipped to the 1985 satellite extent.
     MNDWI depends on the tide at capture time, so shorelines run generous where tidal flats are wide (west of Yeongjong, south of Ganghwa),
     which is why area dips slightly from 1990→1995 and 2020→2025.
