@@ -47,6 +47,42 @@ Within this extent, Incheon grew from **766 km² to 1,020 km²**. **19.0%** of t
 - **Historical boundaries are clipped to the 1985 satellite extent,** because administrative polygons include tidal flats and run wider than actual land.
 - Total land comes to 1,001 km² against an official figure of about 1,065 km² — a 6% gap that reflects where Landsat classification cuts the tidal-flat edge.
 
+## Getting to a real shoreline: three dead ends
+
+The map went through two complete data sources before Landsat. Both failed for reasons that are easy to miss until the data is already in hand, so they are worth recording — anyone reconstructing a Korean coastline is likely to reach for the same two first.
+
+### 1. Administrative boundaries (SGIS, 1975–2025) — they include the sea
+
+The obvious starting point is the official administrative boundary series: eleven snapshots at five-year intervals, high resolution, free. Stack them and the coastline should emerge.
+
+It does not. **Korean administrative boundaries extend over jurisdictional waters.** Songdo, reclaimed from 1994 onward, already sits inside the 1975 boundary of Dongchun-dong; the Namdong Industrial Complex, filled during the 1980s, sits inside the 1975 boundary of Gojan-dong. The land was not there, but the boundary was.
+
+So a boundary series cannot date reclamation at all. What it shows is when the *administration* reached a place, which may precede the land by decades. We ran an entire version of this map on that misreading before catching it.
+
+The historical polygons (1910–1974) behave differently and are usable — checked against Songdo, Incheon Airport, Cheongna and Namdong, all four correctly read as sea — but they too are wider than actual land, because they include tidal flats. They are clipped to the 1985 satellite extent for that reason.
+
+### 2. Land-cover maps (Ministry of Environment, 1980s–2025) — the sheets stop at 37.5°N
+
+Land-cover classification does give a real shoreline: separate the water class from the land classes and vectorize the edge. Applied to Incheon it produced a plausible series, 330 km² in 1989 rising to 450 km² in 2019, with Songdo and the airport appearing at the right times.
+
+The problem is coverage. **The historical sheets stop at 37.50°N** — the measured extent is 125.75–127.00°E by 37.00–37.50°N. Everything above that line is missing: Cheongna (37.535°N), Geomdan, northern Seo-gu and Gyeyang, and the whole of Ganghwa-gun. The 2025 sheets include the northern tiles; the four historical periods do not, and those tiles are not distributed at all. There was no request or download that would fix it.
+
+A second, smaller problem: only the 2025 layer is mid-category vector data while the earlier four are broad-category raster. The classification boundary for tidal flats and wetlands differs between them, which inflated the final step from 450 to 602 km² — an artefact of the change in scheme, not of reclamation.
+
+### 3. Landsat + MNDWI — correct, but the first export was silently wrong
+
+Satellite imagery solved both problems: the extent is whatever you draw, and one index is applied identically to every year. The extraction itself worked on the first try, and the visual check in Earth Engine looked right.
+
+The export did not, and it failed quietly rather than with an error. Three separate causes, all worth knowing:
+
+- **Vectorizing water instead of land.** `reduceToVectors` on the water mask returns sea polygons, which means land exists only as *holes* inside them. Shapefile export dropped the holes: the 4,378 km² sea polygon came back with one ring and zero holes, so the sea covered everything. Sampling the old city centre and Ganghwa returned "sea" for both.
+- **A validity filter that discarded the main polygon.** A `if geom.is_valid: ... else: continue` guard looks harmless, but a large polygon holding hundreds of island-holes fails validity easily. The sea body was skipped entirely; the largest surviving feature was a 1.19 km² pond.
+- **Shapefile ring-direction conventions.** Shapefile distinguishes outer rings from holes by winding order. Earth Engine's output does not follow it, so readers swap them — pyshp emitted dozens of "this shape consists entirely of holes" warnings.
+
+The fix was to vectorize **land** directly (`water_index.lte(threshold)`), since land is one polygon per island and has no hole problem; to repair rather than discard invalid geometry with `buffer(0)`; and to write **GeoJSON first**, which has no winding convention to violate. We also tried reconstructing polygons from the exported coastline linework, but the rings do not close and only 20–32 km² of land could be recovered per period.
+
+**The general lesson:** an export that produces files without raising an error can still be empty of what you need. Every period now runs through an automatic check on save — the old city centre must classify as land, open sea must not, and total area must increase monotonically over time.
+
 ## Using the map
 
 - The slider moves through time; layers accumulate up to the selected year
