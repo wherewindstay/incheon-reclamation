@@ -45,7 +45,8 @@ Within this extent, Incheon grew from **766 km² to 1,020 km²**. **19.0%** of t
 - **Ongjin-gun's population may be underestimated.** Only three of five SGIS grid zones were available, so some island populations are absent. Area figures are unaffected.
 - **1910, 1914 and 1955 are merged into one layer.** Their outlines differ by less than 0.2 km², within measurement error, and the differences come from inland boundary changes rather than the coast.
 - **Historical boundaries are clipped to the 1985 satellite extent,** because administrative polygons include tidal flats and run wider than actual land.
-- Total land comes to 1,001 km² against an official figure of about 1,065 km² — a 6% gap that reflects where Landsat classification cuts the tidal-flat edge.
+- **Inland classification specks are removed.** The MNDWI classification flickers slightly between years, leaving inland patches (in Bupyeong, Gyeyang and elsewhere) that would read as "land newly created in that period". Reclamation only happens at the coast, so new patches farther than 1.2 km from the shoreline, and fragments under 1 ha, are restored to pre-existing land. Reclaimed-area and population statistics were recomputed on the same basis.
+- Total land comes to 1,016 km² against an official figure of about 1,065 km² — a 5% gap that reflects where Landsat classification cuts the tidal-flat edge.
 
 ## Trial and Error
 
