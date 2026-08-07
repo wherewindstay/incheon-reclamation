@@ -104,6 +104,12 @@ Data collection and the Google Earth Engine notebook by **Sohyun Park**. Data pi
 | Bundled Leaflet | BSD-2-Clause, © Vladimir Agafonkin |
 | Base-map tiles | © CARTO, © OpenStreetMap contributors |
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21842418.svg)](https://doi.org/10.5281/zenodo.21842418)
+
+To cite this work:
+
+> Park, S. (2026). *Incheon, a City Built on Reclaimed Sea (1910-2025)* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21842418
+
 Reuse is welcome. Attribution is a condition of the content license, not a courtesy — credit
 Sohyun Park and link back. If you use this in research, please cite it; GitHub's
 **Cite this repository** button reads [CITATION.cff](CITATION.cff) and will give you BibTeX.
