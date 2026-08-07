@@ -1,0 +1,29 @@
+{
+  "title": "Incheon, a City Built on Reclaimed Sea (1910-2025)",
+  "description": "An interactive map that stacks Incheon's shoreline like tree rings, showing when and where land was claimed from the sea, reconstructed from historical records and Landsat imagery.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "land reclamation",
+    "coastline change",
+    "Incheon",
+    "Landsat",
+    "MNDWI",
+    "historical GIS",
+    "data visualization"
+  ],
+  "creators": [
+    {
+      "name": "Park, Sohyun",
+      "affiliation": "George Mason University Korea"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://wherewindstay.github.io/incheon-reclamation/",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

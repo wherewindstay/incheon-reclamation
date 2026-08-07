@@ -94,6 +94,16 @@ A single HTML file with no external dependencies. The map is drawn directly in S
 
 Data collection and the Google Earth Engine notebook by **Sohyun Park**. Data pipeline and visualization built with the help of **Anthropic Claude**. All figures were computed from source data, and validation points — Songdo, Incheon Airport, the Namdong Industrial Complex, and the old city center — were checked against documented reclamation history.
 
-## License
+## License and citation
 
-Code released under the MIT License. Source data remains subject to the terms of each provider.
+| What | License |
+|---|---|
+| Source code | [MIT](LICENSE) |
+| Written content, figures, analytical results | [CC BY 4.0](LICENSE-CONTENT) |
+| Source data | Terms of each provider (see Data above) |
+| Bundled Leaflet | BSD-2-Clause, © Vladimir Agafonkin |
+| Base-map tiles | © CARTO, © OpenStreetMap contributors |
+
+Reuse is welcome. Attribution is a condition of the content license, not a courtesy — credit
+Sohyun Park and link back. If you use this in research, please cite it; GitHub's
+**Cite this repository** button reads [CITATION.cff](CITATION.cff) and will give you BibTeX.
