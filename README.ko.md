@@ -94,7 +94,7 @@ Landsat 에 닿기 전에 데이터 원본을 두 번 갈아탔습니다. 둘 �
 | 무엇 | 라이선스 |
 |---|---|
 | 소스 코드 | [MIT](LICENSE) |
-| 글·그림·분석 결과 | [CC BY 4.0](LICENSE-CONTENT) |
+| 글·그림·분석 결과 | [CC BY 4.0](CONTENT-LICENSE.md) |
 | 원자료 | 각 제공기관의 이용 조건 (위 「자료」 참조) |
 | 내장된 Leaflet | BSD-2-Clause, © Vladimir Agafonkin |
 | 배경지도 타일 | © CARTO, © OpenStreetMap contributors |

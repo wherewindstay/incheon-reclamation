@@ -99,7 +99,7 @@ Data collection and the Google Earth Engine notebook by **Sohyun Park**. Data pi
 | What | License |
 |---|---|
 | Source code | [MIT](LICENSE) |
-| Written content, figures, analytical results | [CC BY 4.0](LICENSE-CONTENT) |
+| Written content, figures, analytical results | [CC BY 4.0](CONTENT-LICENSE.md) |
 | Source data | Terms of each provider (see Data above) |
 | Bundled Leaflet | BSD-2-Clause, © Vladimir Agafonkin |
 | Base-map tiles | © CARTO, © OpenStreetMap contributors |
