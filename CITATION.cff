@@ -14,8 +14,9 @@ keywords:
   - "MNDWI"
   - "historical GIS"
   - "data visualization"
-license: "MIT"
-license-url: "https://github.com/wherewindstay/incheon-reclamation/blob/main/LICENSE-CONTENT"
+license:
+  - "MIT"
+  - "CC-BY-4.0"
 repository-code: "https://github.com/wherewindstay/incheon-reclamation"
 url: "https://wherewindstay.github.io/incheon-reclamation/"
 type: "software"
