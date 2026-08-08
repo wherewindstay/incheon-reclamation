@@ -105,8 +105,7 @@ Landsat 에 닿기 전에 데이터 원본을 두 번 갈아탔습니다. 둘 �
 
 > 박소현 (2026). *Incheon, a City Built on Reclaimed Sea (1910-2025)* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21842418
 
-재사용은 환영합니다. 다만 **저작자표시는 콘텐츠 라이선스의 조건이지 예의가 아닙니다** —
-박소현을 밝히고 원본으로 링크해 주세요. 연구에 쓰신다면 인용해 주시기 바랍니다.
+재사용은 환영합니다. 저작자표시 후 인용해 주시기 바랍니다.
 GitHub 의 **Cite this repository** 버튼이 [CITATION.cff](CITATION.cff) 를 읽어 BibTeX 을 줍니다.
 ## 만든 방법
 
