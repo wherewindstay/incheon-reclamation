@@ -857,7 +857,8 @@ const I18N = {
   histLabel:'1910–1955'
  }
 };
-let LANG = (navigator.language||'').toLowerCase().startsWith('ko') ? 'ko' : 'en';
+
+let LANG = 'ko';
 const T = ()=>I18N[LANG];
 const guName = nm => LANG==='en' ? (GU_EN[nm]||nm) : nm;
 
@@ -882,7 +883,7 @@ const COLORS = ['#16202e',
                 '#d5c9a6','#e0cb96','#e9c886','#f0c073','#f3b463',  // 1985~2005
                 '#f0a252','#ec8f42','#e77a33','#e05f22'];           // 2010~2025 (Landsat)
 
-const HOME = [[37.02,125.68],[37.88,126.88]];
+const HOME = [[37.33,126.35],[37.62,126.80]];
 const map = L.map('map', {doubleClickZoom:false, zoomSnap:.5, zoomControl:false,
                           maxBounds:[[36.80,125.40],[38.10,127.20]], maxBoundsViscosity:.8});
 L.control.zoom({position:'bottomright'}).addTo(map);   
