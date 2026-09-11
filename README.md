@@ -8,9 +8,9 @@
 >
 > *The image above is static. GitHub does not run interactive content inside a README, so follow the link to move through time and click districts.*
 
-An interactive map that stacks Incheon's shoreline like tree rings, showing when and where land was claimed from the sea.
+An interactive map that stacks Incheon's shoreline by period, showing when and where land was claimed from the sea.
 
-Within this extent, Incheon grew from **766 km² to 1,020 km²**. **19.0%** of today's land (190.3 km²) appeared after 1985, and **13.5%** of the population — about 414,000 people — lives on it.
+Within this extent, Incheon grew from 766 km² to 1,020 km². 19.0% of today's land (190.3 km²) appeared after 1985, and 13.5% of the population — about 414,000 people — lives on it.
 
 | District | Share of area reclaimed | Share of population on reclaimed land |
 |---|---:|---:|
@@ -35,48 +35,48 @@ Within this extent, Incheon grew from **766 km² to 1,020 km²**. **19.0%** of t
 | District boundaries | Statistics Korea SGIS, 2025 administrative divisions | — |
 | Population | Statistics Korea SGIS 100 m grid, 2024 | Cells assigned by whether their centroid falls on reclaimed land |
 
-**Reclaimed land is defined as** 2025 land minus 1985 land.
+Reclaimed land is defined as 2025 land minus 1985 land.
 
-## How to read it, and what it cannot tell you
+## How to read it, and its limits
 
-- **MNDWI depends on the tide at capture time.** Where tidal flats are wide — west of Yeongjong, south of Ganghwa — shorelines run generous. This is also why area dips slightly from 1990→1995 and 2020→2025.
-- **Reclamation before 1985 is invisible here.** Because reclaimed land is defined against the 1985 baseline, places filled earlier (such as the Namdong Industrial Complex) already appear as land in 1985. Cumulative reclamation is larger than these figures suggest.
-- **Baengnyeong and Daecheong islands are missing.** The analysis extent stops at 125.65°E.
-- **Ongjin-gun's population may be underestimated.** Only three of five SGIS grid zones were available, so some island populations are absent. Area figures are unaffected.
-- **1910, 1914 and 1955 are merged into one layer.** Their outlines differ by less than 0.2 km², within measurement error, and the differences come from inland boundary changes rather than the coast.
-- **Historical boundaries are clipped to the 1985 satellite extent,** because administrative polygons include tidal flats and run wider than actual land.
-- **Inland classification specks are removed.** The MNDWI classification flickers slightly between years, leaving inland patches (in Bupyeong, Gyeyang and elsewhere) that would read as "land newly created in that period". Reclamation only happens at the coast, so new patches farther than 1.2 km from the shoreline, and fragments under 1 ha, are restored to pre-existing land. Reclaimed-area and population statistics were recomputed on the same basis.
+- MNDWI depends on the tide at capture time. Where tidal flats are wide — west of Yeongjong, south of Ganghwa — shorelines run wide. This is also why area dips slightly from 1990→1995 and 2020→2025.
+- Reclamation before 1985 is not visible here. Because reclaimed land is defined against the 1985 baseline, places filled earlier (such as the Namdong Industrial Complex) already appear as land in 1985. Cumulative reclamation is larger than these figures.
+- Baengnyeong and Daecheong islands are missing. The analysis extent stops at 125.65°E.
+- Ongjin-gun's population may be underestimated. Only three of five SGIS grid zones were available, so some island populations are absent. Area figures are unaffected.
+- 1910, 1914 and 1955 are merged into one layer. Their outlines differ by less than 0.2 km², within measurement error, and the differences come from inland boundary changes rather than the coast.
+- Historical boundaries are clipped to the 1985 satellite extent, because administrative polygons include tidal flats and run wider than actual land.
+- Inland classification specks are removed. The MNDWI classification varies slightly between years, leaving inland patches (in Bupyeong, Gyeyang and elsewhere) that would read as land newly created in that period. Reclamation happens only at the coast, so new patches farther than 1.2 km from the shoreline, and fragments under 1 ha, are restored to pre-existing land. Reclaimed-area and population statistics were recomputed on the same basis.
 - Total land comes to 1,016 km² against an official figure of about 1,065 km² — a 5% gap that reflects where Landsat classification cuts the tidal-flat edge.
 
-## Trial and Error
+## Trial and error
 
-The map went through two complete data sources before Landsat. Both failed for reasons that are easy to miss until the data is already in hand, so they are recorded here — anyone reconstructing a Korean coastline is likely to reach for the same two first.
+Two data sources were used and set aside before Landsat. Both are the ones a coastline reconstruction tends to reach for first, so they are recorded here.
 
-### 1. Administrative boundaries (SGIS, 1975–2025) — they include the sea
+### 1. Administrative boundaries (SGIS, 1975–2025) — they include jurisdictional waters
 
-The obvious starting point is the official administrative boundary series: eleven snapshots at five-year intervals, high resolution, free. Stack them and the coastline should emerge — but it does not. **Korean administrative boundaries extend over jurisdictional waters.** Songdo, for example, reclaimed from 1994 onward, already sits inside the 1975 boundary of Dongchun-dong, and the Namdong Industrial Complex, filled during the 1980s, sits inside the 1975 boundary of Gojan-dong. The land was not there, but the boundary was.
+Eleven snapshots at five-year intervals, high resolution, free. Stacking them does not produce a coastline: Korean administrative boundaries extend over jurisdictional waters. Songdo, reclaimed from 1994 onward, already sits inside the 1975 boundary of Dongchun-dong, and the Namdong Industrial Complex, filled during the 1980s, sits inside the 1975 boundary of Gojan-dong.
 
-So a boundary series cannot date reclamation at all. What it shows is when the *administration* reached a place, which may precede the land by decades. We ran an entire version of this map on that misreading before catching it.
+A boundary series therefore cannot date reclamation. What it shows is when the administration reached a place, which may precede the land by decades. An entire version of this map was built on that misreading and then withdrawn.
 
-The historical polygons (1910–1974) behave differently and are usable — checked against Songdo, Incheon Airport, Cheongna and Namdong, all four correctly read as sea — but they too are wider than actual land, because they include tidal flats. They are clipped to the 1985 satellite extent for that reason.
+The historical polygons (1910–1974) do trace actual land — checked against Songdo, Incheon Airport, Cheongna and Namdong, all four correctly read as sea — but they too run wider than actual land because they include tidal flats, so they are clipped to the 1985 satellite extent.
 
-### 2. Land-cover maps (Ministry of Environment, 1980s–2025) — the sheets stop at 37.5°N
+### 2. Land-cover maps (Ministry of Environment, 1980s–2025) — the historical sheets stop at 37.5°N
 
-Land-cover classification does give a real shoreline: separate the water class from the land classes and vectorize the edge. Applied to Incheon it produced a plausible series, 330 km² in 1989 rising to 450 km² in 2019, with Songdo and the airport appearing at the right times.
+Land-cover classification gives a real shoreline: separate the water class from the land classes and vectorize the edge. Applied to Incheon it produced a series of 330 km² in 1989 rising to 450 km² in 2019, with Songdo and the airport appearing at the expected times.
 
-The problem is coverage. **The historical sheets stop at 37.50°N** — the measured extent is 125.75–127.00°E by 37.00–37.50°N. Everything above that line is missing: Cheongna (37.535°N), Geomdan, northern Seo-gu and Gyeyang, and the whole of Ganghwa-gun. The 2025 sheets include the northern tiles; for the four historical periods that band was not available.
+The problem is coverage. The historical sheets cover 125.75–127.00°E by 37.00–37.50°N, and everything above that line is missing: Cheongna (37.535°N), Geomdan, northern Seo-gu and Gyeyang, and the whole of Ganghwa-gun. The 2025 sheets include the northern tiles; for the four historical periods that band was not available.
 
 ### 3. Landsat + MNDWI — trial and error in polygonising
 
-Satellite imagery solved both problems: the extent is whatever you draw, and one index is applied identically to every year. The extraction itself worked on the first try, and the visual check in Earth Engine looked right.
+Satellite imagery covers whatever extent is drawn, and one index applies identically to every year. The extraction and the visual check in Earth Engine were correct from the start.
 
-The export did not, and it failed quietly rather than with an error. Three separate causes, all worth knowing:
+The export was not, and it failed without an error. There were three causes.
 
-- **Vectorizing water instead of land.** `reduceToVectors` on the water mask returns sea polygons, which means land exists only as *holes* inside them. Shapefile export dropped the holes: the 4,378 km² sea polygon came back with one ring and zero holes, so the sea covered everything. Sampling the old city centre and Ganghwa returned "sea" for both.
-- **A validity filter that discarded the main polygon.** A `if geom.is_valid: ... else: continue` guard looks harmless, but a large polygon holding hundreds of island-holes fails validity easily. The sea body was skipped entirely; the largest surviving feature was a 1.19 km² pond.
-- **Shapefile ring-direction conventions.** Shapefile distinguishes outer rings from holes by winding order. Earth Engine's output does not follow it, so readers swap them — pyshp emitted dozens of "this shape consists entirely of holes" warnings.
+- Vectorizing water instead of land. `reduceToVectors` on the water mask returns sea polygons, which means land exists only as holes inside them. Shapefile export dropped the holes: the 4,378 km² sea polygon came back with one ring and zero holes, so the sea covered everything. Sampling the old city centre and Ganghwa returned sea for both.
+- A validity filter that discarded the main polygon. An `if geom.is_valid: ... else: continue` guard fails a large polygon holding hundreds of island-holes. The sea body was skipped entirely; the largest surviving feature was a 1.19 km² pond.
+- Shapefile ring-direction conventions. Shapefile distinguishes outer rings from holes by winding order, Earth Engine's output does not follow it, and readers swap them — pyshp emitted dozens of "this shape consists entirely of holes" warnings.
 
-The fix was to vectorize **land** directly (`water_index.lte(threshold)`), since land is one polygon per island and has no hole problem; to repair rather than discard invalid geometry with `buffer(0)`; and to write **GeoJSON first**, which has no winding convention to violate. We also tried reconstructing polygons from the exported coastline linework, but the rings do not close and only 20–32 km² of land could be recovered per period.
+The fix was to vectorize land directly (`water_index.lte(threshold)`), since land is one polygon per island and has no hole problem; to repair rather than discard invalid geometry with `buffer(0)`; and to write GeoJSON first, which has no winding convention to violate. Reconstructing polygons from the exported coastline linework was also tried, but the rings do not close and only 20–32 km² of land could be recovered per period.
 
 ## Using the map
 
@@ -88,11 +88,11 @@ The fix was to vectorize **land** directly (`water_index.lte(threshold)`), since
 
 ## Technical notes
 
-A single HTML file with no external dependencies. The map is drawn directly in SVG without a mapping library, and all coordinates are inlined, so it works offline and embeds cleanly (for example, in a Notion page).
+A single HTML file with no external dependencies. The map is drawn directly in SVG without a mapping library, and all coordinates are inlined, so it works offline.
 
 ## Credits
 
-Data collection and the Google Earth Engine notebook by **Sohyun Park**. Data pipeline and visualization built with the help of **Anthropic Claude**. All figures were computed from source data, and validation points — Songdo, Incheon Airport, the Namdong Industrial Complex, and the old city center — were checked against documented reclamation history.
+Data collection and the Google Earth Engine notebook by Sohyun Park. Data pipeline and visualization built with the help of Anthropic Claude. All figures were computed from source data, and validation points — Songdo, Incheon Airport, the Namdong Industrial Complex, and the old city center — were checked against documented reclamation history.
 
 ## License and citation
 
@@ -102,7 +102,7 @@ Data collection and the Google Earth Engine notebook by **Sohyun Park**. Data pi
 | Written content, figures, analytical results | [CC BY 4.0](CONTENT-LICENSE.md) |
 | Source data | Terms of each provider (see Data above) |
 | Bundled Leaflet | BSD-2-Clause, © Vladimir Agafonkin |
-| Base-map tiles | © CARTO, © OpenStreetMap contributors |
+| Base-map tiles | © OpenStreetMap contributors |
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21842418.svg)](https://doi.org/10.5281/zenodo.21842418)
 
@@ -110,5 +110,4 @@ To cite this work:
 
 > Park, S. (2026). *Incheon, a City Built on Reclaimed Sea (1910-2025)* (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21842418
 
-Reuse is welcome. Please credit Sohyun Park and cite the work. GitHub's
-**Cite this repository** button reads [CITATION.cff](CITATION.cff) and will give you BibTeX.
+Please credit Sohyun Park and cite the work. GitHub's **Cite this repository** button reads [CITATION.cff](CITATION.cff) and will give you BibTeX.
